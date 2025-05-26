@@ -1,0 +1,44 @@
+# conf/base/catalog.yml
+
+
+rf_model:
+  type: pickle.PickleDataset
+  filepath: data/06_models/rf_model.pkl
+
+rf_cv_scores:
+  type: json.JSONDataset
+  filepath: data/07_reporting/rf_cv_scores.json
+
+xgb_model:
+  type: pickle.PickleDataset
+  filepath: data/06_models/xgb_model.pkl
+
+xgb_cv_scores:
+  type: json.JSONDataset
+  filepath: data/07_reporting/xgb_cv_scores.json
+
+logistic_model:
+  type: pickle.PickleDataset
+  filepath: data/06_models/logistic_model.pkl
+
+logistic_cv_scores:
+  type: json.JSONDataset
+  filepath: data/07_reporting/logistic_cv_scores.json
+
+rf_test_metrics:
+  type: json.JSONDataset
+  filepath: data/08_reporting/rf_test_metrics.json
+
+xgb_test_metrics:
+  type: json.JSONDataset
+  filepath: data/08_reporting/xgb_test_metrics.json
+
+logistic_test_metrics:
+  type: json.JSONDataset
+  filepath: data/08_reporting/logistic_test_metrics.json
+
+
+
+
+
+
