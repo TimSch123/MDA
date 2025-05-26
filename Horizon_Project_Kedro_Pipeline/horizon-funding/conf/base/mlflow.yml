@@ -1,6 +1,0 @@
-server:
-  mlflow_tracking_uri: ./mlruns
-
-tracking:
-  experiment:
-    name: horizon_funding
