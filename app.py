@@ -181,7 +181,7 @@ elif page == "Predictions of Contributions":
     st.title("Predictions of Contributions")
 
     # Load the prediction model or pipeline
-    model = joblib.load("model.pkl")
+    model = joblib.load("xgb_model.pkl")
     # Fill in the option values of funding scheme and country
     funding_options = ['HORIZON-ERC', 'HORIZON-AG', 'ERC', 'HORIZON-CSA', 'HORIZON-RIA', 'HORIZON-EIC', 'EURATOM-COFUND', 'CSA', 'HORIZON-COFUND', 'HORIZON-IA', 'EIC',
                        'HORIZON-TMA-MSCA-PF-EF', 'EURATOM-CSA', 'EURATOM-RIA', 'EURATOM-IA', 'HORIZON-ERC-SYG', 'ERC-SYG', 'RIA', 'IA', 'HORIZON-PCP', 'HORIZON-JU-RIA',
@@ -190,7 +190,6 @@ elif page == "Predictions of Contributions":
                        'EE', 'CY', 'UK', 'LT', 'AL', 'RS', 'ME', 'SK', 'BA', 'FO', 'LV', 'HR', 'MT', 'UA', 'TN', 'GE', 'ZA', 'BG', 'AM', 'KE', 'NG', 'BD', 'AU']
 
     with st.form("prediction_form"):
-        total_cost = st.number_input("Total Cost (€): ", min_value=0.0)
         sme_label = st.radio("Is SME?", ["Yes", "No"])
         sme = 1 if sme_label == "Yes" else 0
         org_count = st.number_input("Number of Organizations: ", min_value=1, max_value=100)
@@ -209,7 +208,6 @@ elif page == "Predictions of Contributions":
 
     if submit_button:
         input_df = pd.DataFrame({
-            "totalCost": [total_cost],
             "SME": [sme],
             "org_count": [org_count],
             "startmonth": [start_month],
