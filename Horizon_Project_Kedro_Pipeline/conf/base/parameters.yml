@@ -11,6 +11,5 @@ target_column: "funding_class"
 mlflow_tracking_uri: "file:///$(project_root)/mlruns"
 
 numeric_columns:
-  - totalCost
   - org_count
   - duration_days
