@@ -135,6 +135,8 @@ def assign_funding_class(df: pd.DataFrame) -> pd.DataFrame:
         labels=labels,
         include_lowest=True,
     )
+
+    df = df.drop(columns=["ecMaxContribution])
     return df
 
 
