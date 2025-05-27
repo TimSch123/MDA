@@ -136,7 +136,7 @@ def assign_funding_class(df: pd.DataFrame) -> pd.DataFrame:
         include_lowest=True,
     )
 
-    df = df.drop(columns=["ecMaxContribution])
+    df = df.drop(columns=["ecMaxContribution, "totalCost"])
     return df
 
 
@@ -184,7 +184,7 @@ def remove_outliers(
 def standardize_numeric_columns(
     X_train: pd.DataFrame,
     X_test: pd.DataFrame,
-    numeric_columns: list[str] = ["totalCost", "org_count", "duration"]
+    numeric_columns: list[str] = ["org_count", "duration"]
 ) -> Tuple[pd.DataFrame, pd.DataFrame]:
     
     scaler = StandardScaler()
